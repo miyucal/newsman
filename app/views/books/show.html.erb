@@ -1,24 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
+  <strong>Title</strong>
+  <h1><%= @book.title %></h1>
 
-<p>
-  <strong>Headline:</strong>
-  <%= @book.headline %>
-</p>
 
+  <h2>◼︎ <%= @book.headline %></h2>
+
+  <%= image_tag(@book.image_url, width: 600) if @book.image.present? %>
 <p>
-  <strong>Letter:</strong>
+  <strong>▼ 本文</strong>
   <%= @book.letter %>
 </p>
 
 <p>
-  <strong>Image:</strong>
+  <strong>Image by </strong>
   <%= @book.image %>
 </p>
+
+<%= @book.user.email %>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
